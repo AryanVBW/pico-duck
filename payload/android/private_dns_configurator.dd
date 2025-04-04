@@ -1,0 +1,334 @@
+REM Android Private DNS Configurator
+REM Author: AryanVBW
+REM Version: 1.0
+REM Configures private DNS settings for enhanced privacy
+
+REM ---- INITIAL SETUP ----
+DELAY 1500
+
+REM Wake up the device
+ENTER
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Swipe up to unlock (universal method)
+SWIPE 500 1800 500 800
+DELAY 1500
+
+REM ---- STEP 1: NAVIGATE TO NETWORK SETTINGS ----
+
+REM Open Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Network & Internet (standard Android path)
+STRING network
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 2: ACCESS PRIVATE DNS SETTINGS (STANDARD ANDROID) ----
+
+REM Look for Advanced network settings or Private DNS
+STRING advanced
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find Private DNS option
+STRING private dns
+DELAY 800
+ENTER
+DELAY 1500
+
+REM If not found, try alternative path
+BACK
+DELAY 800
+STRING private
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 3: CONFIGURE PRIVATE DNS ----
+
+REM Select "Private DNS provider hostname" option
+TAB
+DELAY 300
+TAB
+DELAY 300
+STRING private dns provider
+DELAY 800
+ENTER
+DELAY 1000
+
+REM Enter DNS provider hostname (using Cloudflare DNS)
+STRING dns.cloudflare.com
+DELAY 800
+ENTER
+DELAY 1500
+
+REM If that doesn't work, try alternative method
+BACK
+DELAY 800
+
+REM Try selecting from a list if available
+STRING private
+DELAY 800
+ENTER
+DELAY 1500
+STRING custom
+DELAY 800
+ENTER
+DELAY 1000
+STRING dns.cloudflare.com
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 4: ALTERNATIVE PATHS FOR DIFFERENT ANDROID VERSIONS ----
+
+REM If previous methods failed, try Android 9+ specific path
+BACK
+DELAY 800
+BACK
+DELAY 800
+STRING connections
+DELAY 800
+ENTER
+DELAY 1500
+STRING more
+DELAY 800
+ENTER
+DELAY 1500
+STRING private dns
+DELAY 800
+ENTER
+DELAY 1500
+STRING custom
+DELAY 800
+ENTER
+DELAY 1000
+STRING dns.cloudflare.com
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 5: SAMSUNG SPECIFIC PATH ----
+
+REM If device is Samsung, try Samsung-specific path
+BACK
+DELAY 800
+BACK
+DELAY 800
+STRING connections
+DELAY 800
+ENTER
+DELAY 1500
+STRING more connection settings
+DELAY 800
+ENTER
+DELAY 1500
+STRING private dns
+DELAY 800
+ENTER
+DELAY 1500
+STRING private dns provider
+DELAY 800
+ENTER
+DELAY 1000
+STRING dns.cloudflare.com
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 6: XIAOMI/MIUI SPECIFIC PATH ----
+
+REM If device is Xiaomi, try MIUI-specific path
+BACK
+DELAY 800
+BACK
+DELAY 800
+STRING connection & sharing
+DELAY 800
+ENTER
+DELAY 1500
+STRING private dns
+DELAY 800
+ENTER
+DELAY 1500
+STRING private
+DELAY 800
+ENTER
+DELAY 1000
+STRING dns.cloudflare.com
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 7: OPPO/REALME/COLOROS SPECIFIC PATH ----
+
+REM If device is OPPO/Realme, try ColorOS-specific path
+BACK
+DELAY 800
+BACK
+DELAY 800
+STRING additional settings
+DELAY 800
+ENTER
+DELAY 1500
+STRING private dns
+DELAY 800
+ENTER
+DELAY 1500
+STRING hostname
+DELAY 800
+ENTER
+DELAY 1000
+STRING dns.cloudflare.com
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 8: ONEPLUS/OXYGENOS SPECIFIC PATH ----
+
+REM If device is OnePlus, try OxygenOS-specific path
+BACK
+DELAY 800
+BACK
+DELAY 800
+STRING wifi & network
+DELAY 800
+ENTER
+DELAY 1500
+STRING private dns
+DELAY 800
+ENTER
+DELAY 1500
+STRING private
+DELAY 800
+ENTER
+DELAY 1000
+STRING dns.cloudflare.com
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 9: VERIFY DNS CONFIGURATION ----
+
+REM Go to a browser to verify DNS is working
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING chrome
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Access address bar
+TAB
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Go to DNS leak test site
+STRING https://dnsleaktest.com
+DELAY 1000
+ENTER
+DELAY 5000
+
+REM Run standard test
+STRING standard test
+DELAY 800
+ENTER
+DELAY 5000
+
+REM ---- STEP 10: ALTERNATIVE DNS PROVIDERS ----
+
+REM Go back to Settings to try alternative DNS if needed
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate back to Private DNS settings (generic path)
+STRING network
+DELAY 800
+ENTER
+DELAY 1500
+STRING private dns
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Try Google DNS as alternative
+STRING private
+DELAY 800
+ENTER
+DELAY 1000
+STRING dns.google
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 11: CONFIGURE ADGUARD DNS (AD BLOCKING) ----
+
+REM Go back to Private DNS settings
+BACK
+DELAY 800
+STRING private dns
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Configure AdGuard DNS for ad blocking
+STRING private
+DELAY 800
+ENTER
+DELAY 1000
+STRING dns.adguard.com
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 12: VERIFY FINAL CONFIGURATION ----
+
+REM Go back to browser to verify final DNS configuration
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING chrome
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Access address bar
+TAB
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Go to DNS verification site
+STRING https://1.1.1.1/help
+DELAY 1000
+ENTER
+DELAY 5000
+
+REM ---- FINISHED ----
+REM Private DNS has been configured
+
+REM Return to home screen
+HOME
+DELAY 800

